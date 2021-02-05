@@ -1,0 +1,17 @@
+.footer
+{
+    /* margin:30px auto; */
+    text-align: center;
+    width:100%;
+    padding: 30px;
+    background-image:url("/assets/images/3.jpg");
+    height:610px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+input
+{
+height:50px;
+}
