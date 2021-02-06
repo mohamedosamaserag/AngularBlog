@@ -11,17 +11,34 @@ import { BlogService } from '../_Services/blog.service';
 export class BlogAddComponent implements OnInit {
   myDate = new Date();
   newBlog: Blog = new Blog('', '', [''], [''], '', this.myDate, this.myDate);
-
+  photo!: File;
   constructor(private blogService: BlogService, private router: Router) { }
 
   Addpost(): void{
-    this.blogService.addBlog(this.newBlog).subscribe(
-      a => {
-        console.log(a);
-        this.router.navigateByUrl('/home');
-      }
-    );
+    if(this.photo){
+      let formData = new FormData();
+      formData.append('photo',this.photo);
+      this.blogService.addBlogPhoto(this.newBlog,formData).subscribe(
+        a => {
+          console.log(a);
+          this.router.navigateByUrl('/home');
+        }
+      );
+    }
+    else{
+      this.blogService.addBlog(this.newBlog).subscribe(
+        a => {
+          console.log(a);
+          this.router.navigateByUrl('/home');
+        }
+      );
+    }
+
   }
+  handleFileInput(photo: File){
+    this.photo=photo;
+  }
+
   ngOnInit(): void {
   }
 

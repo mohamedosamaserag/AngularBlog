@@ -8,11 +8,11 @@ import { Blog } from '../_models/blog';
 })
 export class BlogService {
 
-addBlogPhoto(blog: Blog): Observable<Blog>{
-  return this.http.post<Blog>('https://myblogs-hanya.herokuapp.com/blogs/addphoto', blog);
+addBlogPhoto(blog: Blog, formData:FormData){
+  return this.http.post<Blog>('https://myblogs-hanya.herokuapp.com/blogs/addphoto',{blog ,formData});
 }
 
-addBlog(blog: Blog): Observable<Blog>{
+addBlog(blog: Blog){
   return this.http.post<Blog>('https://myblogs-hanya.herokuapp.com/blogs/addblog', blog);
 }
 
