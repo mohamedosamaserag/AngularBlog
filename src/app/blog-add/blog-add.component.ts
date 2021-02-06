@@ -16,7 +16,7 @@ export class BlogAddComponent implements OnInit {
 
   Addpost(): void{
     if(this.photo){
-      let formData = new FormData();
+      const formData = new FormData();
       formData.append('photo',this.photo);
       this.blogService.addBlogPhoto(this.newBlog,formData).subscribe(
         a => {
@@ -33,12 +33,11 @@ export class BlogAddComponent implements OnInit {
         }
       );
     }
-
   }
-  handleFileInput(photo: File){
-    this.photo=photo;
+  handleFileInput(event: any){
+    const fileList: FileList = event.target.files;
+    this.photo=fileList[0];
   }
-
   ngOnInit(): void {
   }
 
