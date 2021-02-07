@@ -11,15 +11,28 @@
         <a id="myProfile" class="nav-link" routerLink="/myProfile"><i class="fa fa-user fa-2x text-dark"></i> My Profile</a>
       </li>
       <li class="nav-item ml-3" routerLinkActive="active">
+        <a class="nav-link" routerLink="/addBlog"><i class="fa fa-plus fa-2x text-dark"></i> Add Post</a>
+      </li>
+      <li class="nav-item ml-3" routerLinkActive="active">
         <a id="logout" class="nav-link" routerLink="/login"><i class="fa fa-sign-out-alt fa-2x text-dark"></i> Logout</a>
       </li>
     </ul>
 
     <form class="form-inline my-2 my-lg-0">
+<!-- <div class="dropdown">
+  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Dropdown button
+  </button>
+  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+    <a class="dropdown-item" href="#">Search By Id</a>
+    <a class="dropdown-item" href="#">Search By </a>
+  </div>
+</div> -->
       <input class="form-control mr-sm-2" type="search" placeholder="Enter Id">
-      <button class="btn btn-success my-2 my-sm-0" type="button" routerLink="/search/:id">Search BY Id</button>
+      <span class="text-dark" style="padding:5px; font-size:larger; font-weight:600; border:2px solid darkmagenta; border-radius: 50%;" >OR</span>
+      <!-- <button class="btn btn-success my-2 my-sm-0" type="button" routerLink="/search/:id">Search BY Id</button> -->
       <input class="form-control ml-sm-2 mr-sm-2" type="search" placeholder="Enter Title">
-      <button class="btn btn-success my-2 my-sm-0" type="button"routerLink="/search/:title">Search By Title</button>
+      <!-- <button class="btn btn-success my-2 my-sm-0" type="button"routerLink="/search/:title">Search By Title</button> -->
     </form>
   </div>
 </nav>
