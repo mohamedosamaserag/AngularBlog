@@ -11,5 +11,7 @@ export class NavbarComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
+  logOut(){
+    localStorage.setItem('token', '');
+  }
 }

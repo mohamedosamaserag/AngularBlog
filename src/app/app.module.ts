@@ -1,5 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
+import { JwtModule} from '@auth0/angular-jwt';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -12,7 +15,11 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { NavbarComponent } from './navbar/navbar.component';
-
+import { TokenInteceptorService } from './_Services/token-inteceptor.service';
+export function tokenGetter() {
+ 
+        return localStorage.getItem('token');
+ }
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,8 +35,19 @@ import { NavbarComponent } from './navbar/navbar.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
-  ],
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule,
+    JwtModule.forRoot({
+       config:{
+         tokenGetter: tokenGetter,
+    skipWhenExpired: true,
+    allowedDomains: ['myblogs-hanya.herokuapp.com'],
+    disallowedRoutes: [],
+      }
+   
+  })
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })
