@@ -1,13 +1,10 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-<<<<<<< HEAD
-import { FormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
-=======
+
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { JwtModule} from '@auth0/angular-jwt';
->>>>>>> fb776fc6fb66a7c066bff1c447c6cb25a83cb377
+
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -20,18 +17,18 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { NavbarComponent } from './navbar/navbar.component';
-<<<<<<< HEAD
+
 import { BlogAddComponent } from './blog-add/blog-add.component';
 import { BlogEditComponent  } from './blog-edit/blog-edit.component';
 import { from } from 'rxjs';
 
-=======
+
 import { TokenInteceptorService } from './_Services/token-inteceptor.service';
 export function tokenGetter() {
  
         return localStorage.getItem('token');
  }
->>>>>>> fb776fc6fb66a7c066bff1c447c6cb25a83cb377
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -50,11 +47,6 @@ export function tokenGetter() {
   imports: [
     BrowserModule,
     AppRoutingModule,
-<<<<<<< HEAD
-    FormsModule,
-    HttpClientModule
-  ],
-=======
     HttpClientModule,
     FormsModule,
     JwtModule.forRoot({
@@ -67,7 +59,6 @@ export function tokenGetter() {
    
   })
     ],
->>>>>>> fb776fc6fb66a7c066bff1c447c6cb25a83cb377
   providers: [],
   bootstrap: [AppComponent]
 })
