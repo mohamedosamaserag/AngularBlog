@@ -1,17 +1,21 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-info">
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02"
+    aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
     <ul class="navbar-nav mr-auto mt-2 mt-lg-0 ">
       <li class="nav-item ml-3" routerLinkActive="active">
-        <a id="home" class="nav-link" routerLink="/home"> <span class="sr-only">(current)</span><i class="fa fa-home fa-2x text-dark"></i> Home</a>
-      </li>
-      <li class="nav-item ml-3"routerLinkActive="active">
-        <a id="myProfile" class="nav-link" routerLink="/myProfile"><i class="fa fa-user fa-2x text-dark"></i> My Profile</a>
+        <a id="home" class="nav-link" routerLink="/home"> <span class="sr-only">(current)</span><i
+            class="fa fa-home fa-2x text-dark"></i> Home</a>
       </li>
       <li class="nav-item ml-3" routerLinkActive="active">
-        <a id="logout" class="nav-link" routerLink="/login"><i class="fa fa-sign-out-alt fa-2x text-dark"></i> Logout</a>
+        <a id="myProfile" class="nav-link" routerLink="/myProfile"><i class="fa fa-user fa-2x text-dark"></i> My
+          Profile</a>
+      </li>
+      <li class="nav-item ml-3" routerLinkActive="active">
+        <a id="logout" class="nav-link" (click)="logOut()" routerLink="/login"><i
+            class="fa fa-sign-out-alt fa-2x text-dark"></i> Logout</a>
       </li>
       
       <li routerLinkActive="active"><a routerLink="/addBlog">Add Post</a></li>
@@ -21,7 +25,7 @@
       <input class="form-control mr-sm-2" type="search" placeholder="Enter Id">
       <button class="btn btn-success my-2 my-sm-0" type="button" routerLink="/search/:id">Search BY Id</button>
       <input class="form-control ml-sm-2 mr-sm-2" type="search" placeholder="Enter Title">
-      <button class="btn btn-success my-2 my-sm-0" type="button"routerLink="/search/:title">Search By Title</button>
+      <button class="btn btn-success my-2 my-sm-0" type="button" routerLink="/search/:title">Search By Title</button>
     </form>
   </div>
 </nav>

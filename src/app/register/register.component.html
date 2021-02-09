@@ -1,30 +1,42 @@
 <div class="footer">
-  <form method="get" class="container was-validated"id="registerform" >
-  <div class="input-group mb-3 row offset-3 col-6">
+  <div method="get" class="container was-validated" id="registerform">
+    <div class="input-group mb-3 row offset-3 col-6">
       <span class="input-group-prepend "><i class="input-group-text fa fa-user fa-2x"></i></span>
-      <input id="firstName" type="text" class="form-control mr-2" placeholder="First Name" required />
-  </div>
-  <div class="input-group mb-3 row offset-3 col-6">
+      <input id="firstName" type="text" class="form-control mr-2" [(ngModel)]="newUser.firstName"
+        placeholder="First Name" required />
+    </div>
+    <div class="input-group mb-3 row offset-3 col-6">
       <span class="input-group-prepend "><i class="input-group-text fa fa-user fa-2x"></i></span>
-      <input id="lastName" type="text" class="form-control mr-2"  placeholder="Last Name" required  />
-  </div>
-  <div class="input-group mb-3 row offset-3 col-6">
-    <span class="input-group-prepend "><i class="input-group-text fa fa-user fa-2x"></i></span>
-    <input id="userName" type="text" class="form-control mr-2"  placeholder="User Name" required  />
-  </div>
-  <div class="input-group mb-3 row offset-3 col-6">
-    <span class="input-group-append"><i class=" input-group-text fa fa-envelope  fa-2x"></i></span>
-    <input id="Email" type="email" class="form-control mr-2"  placeholder="Email" required />
-</div>
-  <div class="input-group mb-3 row offset-3 col-6">
+      <input id="lastName" type="text" class="form-control mr-2" [(ngModel)]="newUser.LastName" placeholder="Last Name"
+        required />
+    </div>
+    <div class="input-group mb-3 row offset-3 col-6">
+      <span class="input-group-prepend "><i class="input-group-text fa fa-user fa-2x"></i></span>
+      <input id="userName" type="text" class="form-control mr-2" [(ngModel)]="newUser.username" placeholder="User Name"
+        required />
+    </div>
+    <div class="input-group mb-3 row offset-3 col-6">
+      <span class="input-group-append"><i class=" input-group-text fa fa-envelope  fa-2x"></i></span>
+      <input id="Email" type="email" class="form-control mr-2" [(ngModel)]="newUser.Email" placeholder="Email"
+        required />
+    </div>
+    <div class="input-group mb-3 row offset-3 col-6">
+      <span class="input-group-append"><i class=" input-group-text fa fa-calendar  fa-2x"></i></span>
+      <input id="dateOfBirth" type="date" class="form-control mr-2" [(ngModel)]="newUser.dob" ngbDatepicker
+        placeholder="Date Of Birth" required />
+    </div>
+    <div class="input-group mb-3 row offset-3 col-6">
       <span class="input-group-append"><i class=" input-group-text fa fa-lock fa-2x"></i></span>
-      <input id="password" type="password" class="form-control mr-2"  placeholder="password" required />
+      <input id="password" type="password" class="form-control mr-2" [(ngModel)]="newUser.password"
+        placeholder="password" required />
+    </div>
+    <div>
+      <input style="margin: 10px auto;" id="submitRegister" (click)="register()" type="button" value="Register"
+        class="btn btn-primary row offset-3 col-2 mb-4" />
+    </div>
   </div>
-  <div>
-      <input style="margin: 10px auto;" id="submitRegister" type="button" value="Register" class="btn btn-primary row offset-3 col-2 mb-4"/>
+  <div class="mt-4">
+    <span class="text-warning">Have an account ? </span><a style="font-weight:700; font-size:large;" class="text-dark"
+      routerLink="/login">Login</a>
   </div>
-</form>
-<div class="mt-4">
- <span class="text-warning">Have an account ? </span><a style="font-weight:700; font-size:large;" class="text-dark" routerLink="/login">Login</a>
-</div>
 </div>
