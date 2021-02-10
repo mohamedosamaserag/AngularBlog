@@ -40,6 +40,7 @@ export function tokenGetter() {
     FormsModule,
     JwtModule.forRoot({
        config:{
+         authScheme:"",
          tokenGetter: tokenGetter,
     skipWhenExpired: true,
     allowedDomains: ['myblogs-hanya.herokuapp.com'],

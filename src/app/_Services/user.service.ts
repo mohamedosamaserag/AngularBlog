@@ -17,6 +17,9 @@ export class UserService {
     return this.http.post('https://myblogs-hanya.herokuapp.com/users/login',user);
   }
 
+  getUserByID(id:string){
+    return this.http.get('https://myblogs-hanya.herokuapp.com/users/'+id)
+  }
   logedIn(){
     return !!localStorage.getItem('token');
   }
