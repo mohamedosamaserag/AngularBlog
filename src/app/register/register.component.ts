@@ -10,7 +10,8 @@ import { UserService } from '../_Services/user.service';
 })
 export class RegisterComponent implements OnInit {
   currentDate = new Date();
-  newUser:User = new User('','','','','',this.currentDate);
+  //newUser:User = new User('','','','','',this.currentDate);
+  newUser:User = new User;
   constructor(public userService:UserService,public router:Router) { }
 
   ngOnInit(): void {
