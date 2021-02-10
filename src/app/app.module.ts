@@ -1,8 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
-import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 import { JwtModule} from '@auth0/angular-jwt';
 
 
@@ -17,9 +16,14 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { NavbarComponent } from './navbar/navbar.component';
-
 import { BlogAddComponent } from './blog-add/blog-add.component';
-import { BlogEditComponent  } from './blog-edit/blog-edit.component';
+import { BlogEditComponent } from './blog-edit/blog-edit.component';
+import { BlogDeleteComponent } from './blog-delete/blog-delete.component';
+import { UserDeleteComponent } from './user-delete/user-delete.component';
+import { UserEditComponent } from './user-edit/user-edit.component';
+import { CommentAddComponent } from './comment-add/comment-add.component';
+import { CommentViewComponent } from './comment-view/comment-view.component';
+
 import { from } from 'rxjs';
 
 
@@ -42,7 +46,12 @@ export function tokenGetter() {
     NotFoundComponent,
     NavbarComponent,
     BlogAddComponent,
-    BlogEditComponent
+    BlogEditComponent,
+    BlogDeleteComponent,
+    UserDeleteComponent,
+    UserEditComponent,
+    CommentAddComponent,
+    CommentViewComponent
   ],
   imports: [
     BrowserModule,
@@ -51,10 +60,11 @@ export function tokenGetter() {
     FormsModule,
     JwtModule.forRoot({
        config:{
+         authScheme:"",
          tokenGetter: tokenGetter,
-    skipWhenExpired: true,
-    allowedDomains: ['myblogs-hanya.herokuapp.com'],
-    disallowedRoutes: [],
+        skipWhenExpired: true,
+        allowedDomains: ['myblogs-hanya.herokuapp.com'],
+       disallowedRoutes: [],
       }
    
   })

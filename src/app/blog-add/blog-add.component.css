@@ -1,6 +1,25 @@
-/* #upload_button {
-    display: inline-block;
-  }
-  #upload_button input[type=file] {
-    display:none;
-  } */
+.footer
+{
+    /* margin:30px auto; */
+    text-align: center;
+    width:100%;
+    padding: 30px;
+    background-image:url("/assets/images/3.jpg");
+    height:610px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+input
+{
+height:50px;
+}
+input[type="file"]
+{
+  width:230px;
+}
+textarea
+{
+  background-color: rgb(236, 222, 202);
+}

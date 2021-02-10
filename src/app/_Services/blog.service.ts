@@ -5,19 +5,29 @@ import { Blog } from '../_models/blog';
 import { UserService } from './user.service';
 
 
+
 @Injectable({
   providedIn: 'root'
 })
 export class BlogService {
 
-  public token: any = localStorage.getItem('token');
 
-addBlogPhoto(blog: Blog, formData:FormData){
-  return this.http.post<Blog>('https://myblogs-hanya.herokuapp.com/blogs/addphoto',{blog ,formData}, {headers: {authorization:(this.token)}});
+ // public token: any = localStorage.getItem('token');
+
+addBlogPhoto(formData:FormData){
+  return this.http.post<Blog>('https://myblogs-hanya.herokuapp.com/blogs/addphoto',formData);
 }
 
-addBlog(blog: Blog){
-  return this.http.post<Blog>('https://myblogs-hanya.herokuapp.com/blogs/addblog', blog, {headers: {authorization: this.token}});
+addBlog(newBlog: Blog){
+  return this.http.post('https://myblogs-hanya.herokuapp.com/blogs/addblog', newBlog);
+}
+
+getBlog(id: string){
+  return this.http.get<Blog>('https://myblogs-hanya.herokuapp.com/blogs/'+id);
+}
+
+editBlog(id: string, eblog: Blog){
+  return this.http.patch<Blog>('https://myblogs-hanya.herokuapp.com/blogs/'+id, eblog);
 }
 
   constructor(private http: HttpClient, private u: UserService ) { }

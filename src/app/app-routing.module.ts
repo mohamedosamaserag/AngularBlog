@@ -1,7 +1,12 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { BlogAddComponent } from './blog-add/blog-add.component';
+
+import { BlogDeleteComponent } from './blog-delete/blog-delete.component';
 import { BlogEditComponent } from './blog-edit/blog-edit.component';
+import { CommentAddComponent } from './comment-add/comment-add.component';
+import { CommentViewComponent } from './comment-view/comment-view.component';
+
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { MyProfileComponent } from './my-profile/my-profile.component';
@@ -9,6 +14,8 @@ import { NotFoundComponent } from './not-found/not-found.component';
 import { RegisterComponent } from './register/register.component';
 import { SearchIdComponent } from './search-id/search-id.component';
 import { SearchTitleComponent } from './search-title/search-title.component';
+import { UserDeleteComponent } from './user-delete/user-delete.component';
+import { UserEditComponent } from './user-edit/user-edit.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
 
 const routes: Routes = [
@@ -21,6 +28,12 @@ const routes: Routes = [
   {path: 'myProfile', component: MyProfileComponent},
   {path: 'addBlog', component: BlogAddComponent},
   {path: 'editBlog', component: BlogEditComponent},
+
+  {path: 'deleteBlog', component: BlogDeleteComponent},
+  {path: 'editUser', component: UserEditComponent},
+  {path: 'deleteUser', component: UserDeleteComponent},
+  {path: 'addComment', component: CommentAddComponent},
+  {path: 'viewComment', component: CommentViewComponent},
 
 
   {path: '', redirectTo: '/register', pathMatch: 'full'},

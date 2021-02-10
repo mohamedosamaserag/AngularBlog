@@ -10,15 +10,24 @@ import { BlogService } from '../_Services/blog.service';
 })
 export class BlogAddComponent implements OnInit {
   myDate = new Date();
-  newBlog: Blog = new Blog('', '', '', [''], [''], '', this.myDate, this.myDate);
+
+  //newBlog: Blog = new Blog( '', '', '', [''], '', 0, this.myDate, this.myDate);
+  //newBlog!:Blog;
+  newBlog: Blog = new Blog;
   photo!: File;
   constructor(private blogService: BlogService, private router: Router) { }
 
   Addpost(): void{
+
     if(this.photo){
       const formData = new FormData();
       formData.append('photo',this.photo);
-      this.blogService.addBlogPhoto(this.newBlog,formData).subscribe(
+      formData.append('title',this.newBlog.title);
+      formData.append('tags',this.newBlog.tags);
+      formData.append('body',this.newBlog.body);
+
+      this.blogService.addBlogPhoto(formData).subscribe(
+
         a => {
           console.log(a);
           this.router.navigateByUrl('/home');
@@ -26,6 +35,7 @@ export class BlogAddComponent implements OnInit {
       );
     }
     else{
+      console.log(this.newBlog);
       this.blogService.addBlog(this.newBlog).subscribe(
         a => {
           console.log(a);
