@@ -1,101 +1,24 @@
 <app-navbar></app-navbar>
 <div class="alert alert-primary container row col-12" style=" margin: 10px auto;">
-  <!-- <div class="col-8">
+  <div class="col-8">
     username: {{user.username}} <br>
     firstName: {{user.firstName}}<br>
     LastName: {{user.LastName}} <br>
     Email: {{user.Email}} <br>
-    following:<br>
-    followers:<br>
-<<<<<<< HEAD
+    following:{{user.following}}<br>
+    followers:{{user.followers}}<br>
+
     <button class="btn btn-warning mt-2" routerLink="/editUser">Edit My Account</button><br>
     <button class="btn btn-danger mt-2" routerLink="/deleteUser">Delete My Account</button>
-=======
-    <button class="btn btn-warning mt-2">Edit My Account</button><br>
-    <button class="btn btn-danger mt-2">Delete My Account</button>
-  </div> -->
+
+  </div>
+  
   <div class=" offset-2 col-1 mt-2">
     <i class="fa fa-user fa-8x text-success"></i>
     <label style="font-size:large; font-weight:600; margin-left:33px;">USER</label>
->>>>>>> 23f537e13da1125b22c0253b9c4b32f6c2f832e9
-  </div>
-</div>
-<<<<<<< HEAD
-<div class="card-deck col-12">
-  <div class="card text-white bg-success">
-    <img class="card-img-top img-responsive" src="assets/images/1.jpg" alt="Card image cap">
-    <div class="card-body">
-      <h5 class="card-title">Card title</h5>
-      <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-    </div>
-    <div class="card-footer">
-      <button class="btn btn-light mr-2 mb-3" >view Comments</button><br>
-      <button class="btn btn-warning mr-2"routerLink="/editBlog">Edit</button>
-      <button class="btn btn-danger" routerLink="/deleteBlog" >Delete</button>
-    </div>
-  </div>
-  <div class="card text-white bg-danger">
-    <img class="card-img-top img-responsive" src="assets/images/1.jpg" alt="Card image cap">
-    <div class="card-body">
-      <h5 class="card-title">Card title</h5>
-      <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-    </div>
-    <div class="card-footer">
-      <button class="btn btn-light mr-2 mb-3"routerLink="/viewComment">view Comments</button><br>
-      <button class="btn btn-warning mr-2"routerLink="/editBlog">Edit</button>
-      <button class="btn btn-danger" routerLink="/deleteBlog" >Delete</button>
-      </div>
-  </div>
-  <div class="card text-white bg-info">
-    <img class="card-img-top img-responsive" src="assets/images/1.jpg" alt="Card image cap">
-    <div class="card-body">
-      <h5 class="card-title">Card title</h5>
-      <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
-    </div>
-    <div class="card-footer">
-      <button class="btn btn-light mr-2 mb-3"routerLink="/viewComment">view Comments</button><br>
-      <button class="btn btn-warning mr-2"routerLink="/editBlog">Edit</button>
-      <button class="btn btn-danger" routerLink="/deleteBlog" >Delete</button>
-    </div>
   </div>
 </div>
 
-<div class="card-deck col-12 mt-3">
-  <div class="card text-white bg-success">
-    <img class="card-img-top img-responsive" src="assets/images/1.jpg" alt="Card image cap">
-    <div class="card-body">
-      <h5 class="card-title">Card title</h5>
-      <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-    </div>
-    <div class="card-footer">
-      <button class="btn btn-light mr-2 mb-3"routerLink="/viewComment">view Comments</button><br>
-      <button class="btn btn-warning mr-2"routerLink="/editBlog">Edit</button>
-      <button class="btn btn-danger" routerLink="/deleteBlog" >Delete</button>
-    </div>
-  </div>
-  <div class="card text-white bg-danger">
-    <img class="card-img-top img-responsive" src="assets/images/1.jpg" alt="Card image cap">
-    <div class="card-body">
-      <h5 class="card-title">Card title</h5>
-      <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-    </div>
-    <div class="card-footer">
-      <button class="btn btn-light mr-2 mb-3"routerLink="/viewComment">view Comments</button><br>
-      <button class="btn btn-warning mr-2"routerLink="/editBlog">Edit</button>
-      <button class="btn btn-danger" routerLink="/deleteBlog" >Delete</button>
-    </div>
-  </div>
-  <div class="card text-white bg-info">
-    <img class="card-img-top img-responsive" src="assets/images/1.jpg" alt="Card image cap">
-    <div class="card-body">
-      <h5 class="card-title">Card title</h5>
-      <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
-    </div>
-    <div class="card-footer">
-      <button class="btn btn-light mr-2 mb-3"routerLink="/viewComment">view Comments</button><br>
-      <button class="btn btn-warning mr-2"routerLink="/editBlog">Edit</button>
-      <button class="btn btn-danger" routerLink="/deleteBlog" >Delete</button>
-=======
 <div class="row col-12">
   <div *ngFor="let item of blogs" class="card-deck col-12 col-md-4 mt-3 ml-2">
     <div class="card text-white bg-success">
@@ -107,9 +30,14 @@
         <pre class="card-text text-"><i>Posted At : {{item.createdAt}}</i></pre>
       </div>
       <div class="card-footer">
-        <button class="btn btn-warning" routerLink="/addComment">Add Comment</button>
+        <button class="btn btn-warning" routerLink="/addComment">Add Comment</button> 
+        <div>
+          <button class="btn btn-primary mt-2 mr-2" [routerLink]="['/editBlog', item._id]">Edit</button>
+          <button class="btn btn-danger mt-2" [routerLink]="['/deleteBlog', item._id]">Delete</button>
+        </div>      
       </div>
->>>>>>> 23f537e13da1125b22c0253b9c4b32f6c2f832e9
+
+
     </div>
   </div>
 </div>

@@ -25,11 +25,12 @@ export class BlogEditComponent implements OnInit {
 
 
   ngOnInit(): void {
-    let id='';
+   let id='';
     this.ar.params.subscribe(
       a=>{
-        id = a['id'];
-        this.BlogService.getBlog(id).subscribe(
+        console.log(a);
+       id = a['id'];
+        this.BlogService.getBlogById(id).subscribe(
           d=>{
             this.Eblog=d;
           });

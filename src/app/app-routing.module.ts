@@ -27,9 +27,9 @@ const routes: Routes = [
   {path: 'userProfile', component: UserProfileComponent},
   {path: 'myProfile', component: MyProfileComponent},
   {path: 'addBlog', component: BlogAddComponent},
-  {path: 'editBlog', component: BlogEditComponent},
+  {path: 'editBlog/:id', component: BlogEditComponent},
 
-  {path: 'deleteBlog', component: BlogDeleteComponent},
+  {path: 'deleteBlog/:id', component: BlogDeleteComponent},
   {path: 'editUser', component: UserEditComponent},
   {path: 'deleteUser', component: UserDeleteComponent},
   {path: 'addComment', component: CommentAddComponent},

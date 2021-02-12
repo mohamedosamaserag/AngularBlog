@@ -1,15 +1,22 @@
 <app-navbar></app-navbar>
-<div class="alert alert-success container row col-6" style=" margin: 10px auto;">
-<div class="card-deck col-12">
-  <div class="card text-dark bg-light">
-    <img class="card-img-top img-responsive" src="assets/images/1.jpg" alt="Card image cap">
-    <div class="card-body">
-      <h5 class="card-title">Card title</h5>
-      <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-    </div>
-    <div class="card-footer">
-      <button (click)="deleteMyBlog()" class="btn btn-success mr-2">Delete</button>
-      <button routerLink="/myProfile" class="btn btn-danger">Cancel</button>
+<div class="row col-12">
+  <div  class="card-deck col-12 col-md-4 mt-3 ml-2">
+    <div class="card text-white bg-success">
+      <img class="card-img-top img-responsive" [src]="'https://myblogs-hanya.herokuapp.com/'+blog.photo"
+        alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">{{blog.title}}</h5>
+        <p class="card-text">{{blog.body}}</p>
+        <pre class="card-text text-"><i>Posted At : {{blog.createdAt}}</i></pre>
+      </div>
+      <div class="card-footer">
+        <button (click)="deleteMyBlog()" class="btn btn-danger mr-2">Delete</button>
+        <button routerLink="/myProfile" class="btn btn-primary">Cancel</button>
+      </div>
     </div>
   </div>
 </div>
+
+
+
+

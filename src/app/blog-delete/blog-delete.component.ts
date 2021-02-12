@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Blog } from '../_models/blog';
+import { User } from '../_models/user';
 import { BlogService } from '../_Services/blog.service';
+import { UserService } from '../_Services/user.service';
 
 @Component({
   selector: 'app-blog-delete',
@@ -10,12 +12,14 @@ import { BlogService } from '../_Services/blog.service';
 })
 export class BlogDeleteComponent implements OnInit {
 
-    delBlog: Blog = new Blog;
+    user!:User;
+    blogs: Blog = new Blog;
+    blog!:Blog;
 
-  constructor(public blogService:BlogService, public router:Router) { }
+  constructor(public blogService:BlogService, public router:Router, public ar: ActivatedRoute) { }
 
   deleteMyBlog(){
-    this.blogService.deleteMyBlog(this.delBlog._id).subscribe(
+    this.blogService.deleteMyBlog(this.blogs._id).subscribe(
       d=>{
         console.log(d);
         this.router.navigateByUrl('/myProfile');
@@ -23,6 +27,16 @@ export class BlogDeleteComponent implements OnInit {
   }
 
   ngOnInit(): void {
-  }
+    let id ='';
+    this.ar.params.subscribe(
+      a=>{
+        id = a[ 'id' ];
+        this.blogService.getBlogById(id).subscribe(
+          d =>{
+            console.log(d);
+            this.blog = d;
+          });
+      });
 
+  }
 }
