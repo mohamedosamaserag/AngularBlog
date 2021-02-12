@@ -19,6 +19,7 @@ export class HomeComponent implements OnInit {
     this.blogService.getBlogs().subscribe(
       d=>{
       console.log(d);
+      //this.blogs=d;
       this.blogs=d;     
     });
   }
