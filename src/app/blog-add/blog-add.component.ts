@@ -10,7 +10,7 @@ import { BlogService } from '../_Services/blog.service';
 })
 export class BlogAddComponent implements OnInit {
   myDate = new Date();
-  newBlog: Blog = new Blog('', '', [''], [''], '', this.myDate, this.myDate);
+  newBlog!: Blog ;//= new Blog('', '', [''], [''], '', this.myDate, this.myDate);
   photo!: File;
   constructor(private blogService: BlogService, private router: Router) { }
 
