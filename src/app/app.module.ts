@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+
 import { JwtModule} from '@auth0/angular-jwt';
 
 
@@ -23,7 +24,7 @@ import { UserDeleteComponent } from './user-delete/user-delete.component';
 import { UserEditComponent } from './user-edit/user-edit.component';
 import { CommentAddComponent } from './comment-add/comment-add.component';
 import { CommentViewComponent } from './comment-view/comment-view.component';
-
+import { from } from 'rxjs';
 import { TokenInteceptorService } from './_Services/token-inteceptor.service';
 export function tokenGetter() {
  
@@ -59,9 +60,9 @@ export function tokenGetter() {
        config:{
          authScheme:"",
          tokenGetter: tokenGetter,
-    skipWhenExpired: true,
-    allowedDomains: ['myblogs-hanya.herokuapp.com'],
-    disallowedRoutes: [],
+        skipWhenExpired: true,
+        allowedDomains: ['myblogs-hanya.herokuapp.com'],
+       disallowedRoutes: [],
       }
    
   })

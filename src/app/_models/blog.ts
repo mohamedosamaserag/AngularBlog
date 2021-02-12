@@ -1,4 +1,16 @@
 export class Blog {
-  constructor(public title: string, public body: string, public tags: [string], public comment: [string], public photo: string,
-              public author:string,public createdAt: Date, public updatedAt: Date){}
+    _id!:string;
+    title!:string;
+    body!:string;
+    tags!:string;
+    comment!:[string];
+    photo!:string;
+    likes!:number;
+    createdAt!:Date;
+    updatedAt!:Date;
+    author!: string;
+    constructor(){}
+    /*constructor( public title: string, public body: string, public tags: string, public comment: [string], public photo: string,
+        public likes: number= 0, public createdAt: Date, public updatedAt: Date){}*/
+
 }

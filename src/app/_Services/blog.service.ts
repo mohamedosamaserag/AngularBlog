@@ -1,13 +1,28 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { UserService } from './user.service';
-import { Observable } from 'rxjs';
+import { from, Observable } from 'rxjs';
 import { Blog } from '../_models/blog';
+import { UserService } from './user.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class BlogService {
+
+
+getBlogById(id: string){
+  return this.http.get<Blog>('https://myblogs-hanya.herokuapp.com/blogs/'+id);
+}
+
+editBlog(id: string, eblog: Blog){
+  return this.http.patch<Blog>('https://myblogs-hanya.herokuapp.com/blogs/'+id, eblog);
+}
+
+deleteMyBlog(id: string){
+  return this.http.delete('https://myblogs-hanya.herokuapp.com/blogs/'+id);
+}
+
+
   public token:any=localStorage.getItem('token');
 
   constructor(private http:HttpClient,private userService:UserService) { }
@@ -20,12 +35,12 @@ export class BlogService {
     return this.http.get('https://myblogs-hanya.herokuapp.com/blogs/getblog',{headers:{authorization:this.token}});
   }
 
-addBlogPhoto(blog: Blog, formData: FormData){
-  return this.http.post<Blog>('https://myblogs-hanya.herokuapp.com/blogs/addphoto', {blog , formData});
-}
-
-addBlog(blog: Blog){
-  return this.http.post<Blog>('https://myblogs-hanya.herokuapp.com/blogs/addblog', blog);
-}
+  addBlogPhoto(formData:FormData){
+    return this.http.post<Blog>('https://myblogs-hanya.herokuapp.com/blogs/addphoto',formData);
+  }
+  
+  addBlog(newBlog: Blog){
+    return this.http.post('https://myblogs-hanya.herokuapp.com/blogs/addblog', newBlog);
+  }
 
 }

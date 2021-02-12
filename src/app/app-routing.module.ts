@@ -1,10 +1,12 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { BlogAddComponent } from './blog-add/blog-add.component';
+
 import { BlogDeleteComponent } from './blog-delete/blog-delete.component';
 import { BlogEditComponent } from './blog-edit/blog-edit.component';
 import { CommentAddComponent } from './comment-add/comment-add.component';
 import { CommentViewComponent } from './comment-view/comment-view.component';
+
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { MyProfileComponent } from './my-profile/my-profile.component';
@@ -25,8 +27,9 @@ const routes: Routes = [
   {path: 'userProfile', component: UserProfileComponent},
   {path: 'myProfile', component: MyProfileComponent},
   {path: 'addBlog', component: BlogAddComponent},
-  {path: 'editBlog', component: BlogEditComponent},
-  {path: 'deleteBlog', component: BlogDeleteComponent},
+  {path: 'editBlog/:id', component: BlogEditComponent},
+
+  {path: 'deleteBlog/:id', component: BlogDeleteComponent},
   {path: 'editUser', component: UserEditComponent},
   {path: 'deleteUser', component: UserDeleteComponent},
   {path: 'addComment', component: CommentAddComponent},

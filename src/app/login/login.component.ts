@@ -9,7 +9,8 @@ import { UserService } from '../_Services/user.service';
 })
 export class LoginComponent implements OnInit {
   currentDate = new Date();
-  loginData:User=new User('','','','','',this.currentDate);
+  //loginData:User=new User('','','','','',this.currentDate);
+  loginData:User=new User;
   constructor(public userService:UserService,public router:Router) { }
 
   ngOnInit(): void {
