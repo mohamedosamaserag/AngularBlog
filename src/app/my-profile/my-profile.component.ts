@@ -15,7 +15,7 @@ export class MyProfileComponent implements OnInit {
   //user!:User;
   //blogs:Blog[]=[];
   blogs: Blog = new Blog;
-  user: User = new User;
+  user: User= new User;
   blog!:Blog;
 
   // followingNumber= 0;
@@ -23,7 +23,7 @@ export class MyProfileComponent implements OnInit {
 
   constructor(public blogService:BlogService, public ar: ActivatedRoute, public userService:UserService, public router:Router) { 
     
-    let id:any = this.blogs.author;
+    let id:any = localStorage.getItem('userID');//this.blogs.author;
     console.log(id);
     this.userService.getUserByID(id).subscribe(
       data=>{       

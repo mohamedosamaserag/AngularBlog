@@ -12,8 +12,7 @@
   <div *ngFor="let item of blogs" class="card-deck col-12 col-md-4 mt-3 ml-2">
 
     <div class="card text-white bg-success">
-      <img class="card-img-top img-responsive" [src]="'https://myblogs-hanya.herokuapp.com/'+item.photo"
-        alt="Card image cap">
+      <img class="card-img-top img-responsive" [src]="item.photo!=null?item.photo:item.photo" alt="Card image cap">
       <div class="card-body">
         <h5 class="card-title">{{item.title}}</h5>
         <p class="card-text">{{item.body}}</p>
