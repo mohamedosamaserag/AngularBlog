@@ -1,15 +1,21 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+<<<<<<< HEAD
 import { from, Observable } from 'rxjs';
 import { Blog } from '../_models/blog';
 import { UserService } from './user.service';
 
 
 
+=======
+import { UserService } from './user.service';
+
+>>>>>>> 23f537e13da1125b22c0253b9c4b32f6c2f832e9
 @Injectable({
   providedIn: 'root'
 })
 export class BlogService {
+<<<<<<< HEAD
 
 
  // public token: any = localStorage.getItem('token');
@@ -35,4 +41,17 @@ deleteMyBlog(id: string){
 }
 
   constructor(private http: HttpClient, private u: UserService ) { }
+=======
+  public token:any=localStorage.getItem('token');
+
+  constructor(private http:HttpClient,private userService:UserService) { }
+
+  getBlogs(){
+    return this.http.get('https://myblogs-hanya.herokuapp.com/blogs',{headers:{authorization:this.token}});
+  }
+
+  getBlog(){
+    return this.http.get('https://myblogs-hanya.herokuapp.com/blogs/getblog',{headers:{authorization:this.token}});
+  }
+>>>>>>> 23f537e13da1125b22c0253b9c4b32f6c2f832e9
 }
