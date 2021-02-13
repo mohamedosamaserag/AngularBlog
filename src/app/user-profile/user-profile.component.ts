@@ -27,6 +27,7 @@ export class UserProfileComponent implements OnInit {
       data=>{
         this.users=data;
       });
+    
     }
 
   ngOnInit(): void {
@@ -42,9 +43,10 @@ export class UserProfileComponent implements OnInit {
     this.blogService.getBlogsByAuthor(this.users[0]._id).subscribe(d=>{
       console.log(d);
       this.blogs=d.reverse();
-  });
-        }
-    )
+      });
+      });
+
+
 
   }
 

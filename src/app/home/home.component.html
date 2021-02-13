@@ -4,7 +4,6 @@
     Welcome to my world</h3>
 </header>
 <div class="container"></div>
-<<<<<<< HEAD
   <div class="row col-12">
     <div *ngFor="let item of blogs" class="card-deck col-12 col-md-4 mt-3 ml-2 ">
      <div class="card text-white bg-success">
@@ -12,31 +11,16 @@
         <div class="card-body">
           <h5 class="card-title">{{item.title}}</h5>
           <p class="card-text" style="height:150px; overflow-y:auto;" >{{item.body}}</p>
-          <pre class="card-text text-"><i>Posted At : {{item.createdAt}}</i></pre>
+          <p class="card-text text-warning">By : {{item.author.username}}</p>
+          <pre class="card-text text-warning"><i>Posted At : {{item.createdAt | date: 'MMMM dd YYYY'}}</i></pre>
         </div>
         <div class="card-footer">
           <!-- <label class="ml-5">Like</label> -->
           <a class="btn mr-2 text-light"><i class="fa fa-heart fa-2x text-light mr-2"></i>Like</a>
          <!-- <label class="mr-2">Comment</label> -->
           <a class="btn text-light ml-3 " routerLink="/addComment"><i class="fa fa-comment fa-2x text-light mr-2"></i>Comment</a>
+          <i class="fa fa-tag btn ml-3 text-light" aria-hidden="true"></i>{{item.tags}}
          </div>
-=======
-<div class="row col-12">
-  <div *ngFor="let item of blogs" class="card-deck col-12 col-md-4 mt-3 ml-2">
-
-    <div class="card text-white bg-success">
-      <img class="card-img-top img-responsive" [src]="item.photo!=null?item.photo:item.photo" alt="Card image cap">
-      <div class="card-body">
-        <h5 class="card-title">{{item.title}}</h5>
-        <p class="card-text">{{item.body}}</p>
-        <pre class="card-text text-"><i>Posted At : {{item.createdAt}}</i></pre>
-
-      </div>
-      <div class="card-footer">
-        <button class="btn btn-warning" [routerLink]="['/addComment',item._id]">Add Comment</button>
-
-      </div>
->>>>>>> 95a53675df41f78f179c1a3d3b528849c7512d7a
     </div>
   </div>
 </div>

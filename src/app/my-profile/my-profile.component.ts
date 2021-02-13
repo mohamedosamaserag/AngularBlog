@@ -27,7 +27,7 @@ export class MyProfileComponent implements OnInit {
     console.log(id);
     this.userService.getUserByID(id).subscribe(
       data=>{
-        // this.user=data;
+        this.user=data;
       }
     )
   }
@@ -52,7 +52,7 @@ export class MyProfileComponent implements OnInit {
 
     this.blogService.getBlog().subscribe(d=>{
       console.log(d);
-      this.blogs=d.reverse();
+      this.blogs=d;
 
     });
 

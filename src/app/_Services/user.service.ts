@@ -38,4 +38,15 @@ export class UserService {
   getUserByUserName(userName:string){
     return this.http.get<User[]>('https://myblogs-hanya.herokuapp.com/users/username/'+userName);
   }
+
+  followUSer(id:string){
+    return this.http.post<User[]>('https://myblogs-hanya.herokuapp.com/users/follow/',id);
+  }
+
+  unfollowUSer(id:string){
+    return this.http.post<User[]>('https://myblogs-hanya.herokuapp.com/users/unfollow/',id);
+  }
+
+
+
 }

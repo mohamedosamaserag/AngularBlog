@@ -7,12 +7,12 @@
     Email: {{item.Email}} <br>
   </div>
   <div class="col-2">
-    <label style="font-size:large; font-weight:600; margin:5p;">Follow</label>
+    <!-- <label style="font-size:large; font-weight:600; margin:5p;">Follow</label> -->
     <button class="btn btn-success"><i class="fa fa-user-plus fa-2x text-light"></i></button>
   </div>
   <div class="col-2">
-    <label style="font-size:large; font-weight:600; margin:5px;">UnFollow</label>
-    <button class="btn btn-success"><i class="fa fa-user fa-2x text-light"></i></button>
+    <!-- <label style="font-size:large; font-weight:600; margin:5px;">UnFollow</label> -->
+    <button class="btn btn-success"><i class="fa fa-user-minus fa-2x text-light"></i></button>
   </div>
 </div>
 <!-- <div class="container"></div> -->
@@ -24,11 +24,12 @@
         <div class="card-body">
           <h5 class="card-title">{{item2.title}}</h5>
           <p class="card-text"style="height:150px; overflow-y:auto;">{{item2.body}}</p>
-          <pre class="card-text text-"><i>Posted At : {{item2.createdAt}}</i></pre>
+          <pre class="card-text text-"><i>Posted At : {{item2.createdAt | date: 'MMMM dd YYYY'}}</i></pre>
         </div>
         <div class="card-footer">
           <a class="btn mr-2 text-light"><i class="fa fa-heart fa-2x text-light mr-2"></i>Like</a>
           <a class="btn text-light ml-3" style="width:px;" routerLink="/addComment"><i class="fa fa-comment fa-2x text-light mr-2"></i>Comment</a>
+          <i class="fa fa-tag btn ml-3 text-light" aria-hidden="true"></i>{{item2.tags}}
       </div>
     </div>
   </div>

@@ -20,7 +20,7 @@ export class HomeComponent implements OnInit {
       d=>{
       console.log(d);
       //this.blogs=d;
-      this.blogs=d.reverse();
+      this.blogs=d;
     });
   }
 
