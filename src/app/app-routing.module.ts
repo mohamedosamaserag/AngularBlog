@@ -24,6 +24,7 @@ const routes: Routes = [
   {path: 'register', component: RegisterComponent},
   {path: 'search/:id', component: SearchIdComponent},
   {path: 'search/:title', component: SearchTitleComponent},
+  {path: 'userProfile/:userName', component:UserProfileComponent},
   {path: 'userProfile', component: UserProfileComponent},
   {path: 'myProfile', component: MyProfileComponent},
   {path: 'addBlog', component: BlogAddComponent},

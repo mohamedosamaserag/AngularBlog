@@ -13,22 +13,21 @@ import { UserService } from '../_Services/user.service';
 export class MyProfileComponent implements OnInit {
 
   //user!:User;
-  //blogs:Blog[]=[];
-  blogs: Blog = new Blog;
+  blogs:Blog[]=[];
+  // blogs: Blog = new Blog;
   user: User= new User;
   blog!:Blog;
 
   // followingNumber= 0;
   // followersNumber= 0;
 
-  constructor(public blogService:BlogService, public ar: ActivatedRoute, public userService:UserService, public router:Router) { 
-    
+  constructor(public blogService:BlogService, public ar: ActivatedRoute, public userService:UserService, public router:Router) {
+
     let id:any = localStorage.getItem('userID');//this.blogs.author;
     console.log(id);
     this.userService.getUserByID(id).subscribe(
-      data=>{       
+      data=>{
         // this.user=data;
-        this.user=data;
       }
     )
   }
@@ -53,12 +52,12 @@ export class MyProfileComponent implements OnInit {
 
     this.blogService.getBlog().subscribe(d=>{
       console.log(d);
-      this.blogs=d;   
-      
+      this.blogs=d;
+
     });
 
- 
-    
+
+
 
     // this.userService.getUserByID(this.blogs.author).subscribe(d=>{
     //   console.log(d);
@@ -67,7 +66,7 @@ export class MyProfileComponent implements OnInit {
 
 
   }
-  
+
 
 }
 

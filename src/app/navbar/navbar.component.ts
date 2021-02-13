@@ -9,9 +9,14 @@ export class NavbarComponent implements OnInit {
 
   constructor() { }
 
+  search()
+  {
+
+  }
   ngOnInit(): void {
   }
   logOut(){
     localStorage.setItem('token', '');
   }
+
 }

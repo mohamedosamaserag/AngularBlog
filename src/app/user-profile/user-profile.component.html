@@ -1,78 +1,34 @@
 <app-navbar></app-navbar>
-<div class="alert alert-info container row col-12" style=" margin: 10px auto;">
+<div *ngFor="let item of users" class="alert alert-info container row col-12" style=" margin: 10px auto;">
   <div class="col-8">
-    username: Gedo <br>
-    firstName: Mahmoud<br>
-    LastName: Khaled <br>
-    Email: gedo.mk@gmail.com
+    username: {{item.username}} <br>
+    firstName: {{item.firstName}}<br>
+    LastName: {{item.LastName}} <br>
+    Email: {{item.Email}} <br>
   </div>
-  <div class=" offset-2 col-1">
-    <label style="font-size:large; font-weight:600; margin:5px; ">Follow</label>
+  <div class="col-2">
+    <label style="font-size:large; font-weight:600; margin:5p;">Follow</label>
     <button class="btn btn-success"><i class="fa fa-user-plus fa-2x text-light"></i></button>
   </div>
-</div>
-<div class="card-deck col-12">
-  <div class="card text-white bg-success">
-    <img class="card-img-top img-responsive" src="assets/images/1.jpg" alt="Card image cap">
-    <div class="card-body">
-      <h5 class="card-title">Card title</h5>
-      <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-    </div>
-    <div class="card-footer">
-      <button class="btn btn-warning"routerLink="/addComment">Add Comment</button>
-    </div>
-  </div>
-  <div class="card text-white bg-danger">
-    <img class="card-img-top img-responsive" src="assets/images/1.jpg" alt="Card image cap">
-    <div class="card-body">
-      <h5 class="card-title">Card title</h5>
-      <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-    </div>
-    <div class="card-footer">
-      <button class="btn btn-warning"routerLink="/addComment">Add Comment</button>
-    </div>
-  </div>
-  <div class="card text-white bg-info">
-    <img class="card-img-top img-responsive" src="assets/images/1.jpg" alt="Card image cap">
-    <div class="card-body">
-      <h5 class="card-title">Card title</h5>
-      <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
-    </div>
-    <div class="card-footer">
-      <button class="btn btn-warning"routerLink="/addComment">Add Comment</button>
-    </div>
+  <div class="col-2">
+    <label style="font-size:large; font-weight:600; margin:5px;">UnFollow</label>
+    <button class="btn btn-success"><i class="fa fa-user fa-2x text-light"></i></button>
   </div>
 </div>
-
-<div class="card-deck col-12 mt-3">
-  <div class="card text-white bg-success">
-    <img class="card-img-top img-responsive" src="assets/images/1.jpg" alt="Card image cap">
-    <div class="card-body">
-      <h5 class="card-title">Card title</h5>
-      <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-    </div>
-    <div class="card-footer">
-      <button class="btn btn-warning"routerLink="/addComment">Add Comment</button>
-    </div>
-  </div>
-  <div class="card text-white bg-danger">
-    <img class="card-img-top img-responsive" src="assets/images/1.jpg" alt="Card image cap">
-    <div class="card-body">
-      <h5 class="card-title">Card title</h5>
-      <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-    </div>
-    <div class="card-footer">
-      <button class="btn btn-warning"routerLink="/addComment">Add Comment</button>
+<!-- <div class="container"></div>
+  <div class="row col-12">
+    <div class="card-deck col-12 col-md-4 mt-3 ml-2">
+     <div class="card text-white bg-success">
+        <img class="card-img-top img-responsive"[src]="item.photo!=null?item.photo:item.photo" alt="Blog image">
+        <div class="card-body">
+          <h5 class="card-title">title</h5>
+          <pre class="card-text">body</pre>
+          <pre class="card-text text-"><i>Posted At : createdAt</i></pre>
+        </div>
+        <div class="card-footer">
+          <a class="btn mr-2 text-light"><i class="fa fa-heart fa-2x text-light mr-2"></i>Like</a>
+          <a class="btn text-light ml-3" style="width:px;" routerLink="/addComment"><i class="fa fa-comment fa-2x text-light mr-2"></i>Comment</a>
+      </div>
     </div>
   </div>
-  <div class="card text-white bg-info">
-    <img class="card-img-top img-responsive" src="assets/images/1.jpg" alt="Card image cap">
-    <div class="card-body">
-      <h5 class="card-title">Card title</h5>
-      <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
-    </div>
-    <div class="card-footer">
-      <button class="btn btn-warning"routerLink="/addComment">Add Comment</button>
-    </div>
-  </div>
-</div>
+</div> -->

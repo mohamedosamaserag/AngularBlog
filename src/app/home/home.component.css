@@ -24,6 +24,10 @@
   border-top: .05rem solid #e5e5e5;
 }
 
+img
+{
+  height:300px;
+}
 /* Customize container */
 @media (min-width: 48em) {
   .container {

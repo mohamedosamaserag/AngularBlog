@@ -27,4 +27,7 @@ export class UserService {
   getToken(){
     return localStorage.getItem('token');
   }
+  getUserByUserName(userName:string){
+    return this.http.get<User[]>('https://myblogs-hanya.herokuapp.com/users/username/'+userName);
+  }
 }

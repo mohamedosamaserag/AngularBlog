@@ -9,10 +9,10 @@ import { BlogService } from '../_Services/blog.service';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
- // blogs:Blog[]=[];
- blogs: Blog = new Blog;
-  constructor(private blogService:BlogService,private router:Router) { 
-   
+ blogs:Blog[]=[];
+//  blogs: Blog[] = new Blog[];
+  constructor(private blogService:BlogService,private router:Router) {
+
   }
 
   ngOnInit(): void {
@@ -20,7 +20,7 @@ export class HomeComponent implements OnInit {
       d=>{
       console.log(d);
       //this.blogs=d;
-      this.blogs=d;     
+      this.blogs=d.reverse();
     });
   }
 
