@@ -42,6 +42,9 @@ deleteMyBlog(id: string){
   addBlog(newBlog: Blog){
     return this.http.post('https://myblogs-hanya.herokuapp.com/blogs/addblog', newBlog);
   }
-
+  getBlogsByAuthor(author: string)
+  {
+        return this.http.get<Blog[]>('https://myblogs-hanya.herokuapp.com/blogs/blog/'+author);
+  }
 
 }

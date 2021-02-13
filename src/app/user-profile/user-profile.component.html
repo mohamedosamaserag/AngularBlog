@@ -15,15 +15,16 @@
     <button class="btn btn-success"><i class="fa fa-user fa-2x text-light"></i></button>
   </div>
 </div>
-<!-- <div class="container"></div>
+<!-- <div class="container"></div> -->
   <div class="row col-12">
-    <div class="card-deck col-12 col-md-4 mt-3 ml-2">
+    <div *ngFor="let item2 of blogs" class="card-deck col-12 col-md-4 mt-3 ml-2">
      <div class="card text-white bg-success">
-        <img class="card-img-top img-responsive"[src]="item.photo!=null?item.photo:item.photo" alt="Blog image">
+        <img class="card-img-top img-responsive"[src]="item2.photo!=null?item2.photo:item2.photo"
+         alt="Blog image">
         <div class="card-body">
-          <h5 class="card-title">title</h5>
-          <pre class="card-text">body</pre>
-          <pre class="card-text text-"><i>Posted At : createdAt</i></pre>
+          <h5 class="card-title">{{item2.title}}</h5>
+          <p class="card-text"style="height:150px; overflow-y:auto;">{{item2.body}}</p>
+          <pre class="card-text text-"><i>Posted At : {{item2.createdAt}}</i></pre>
         </div>
         <div class="card-footer">
           <a class="btn mr-2 text-light"><i class="fa fa-heart fa-2x text-light mr-2"></i>Like</a>
@@ -31,4 +32,4 @@
       </div>
     </div>
   </div>
-</div> -->
+<!-- </div> -->

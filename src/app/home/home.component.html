@@ -5,19 +5,19 @@
 </header>
 <div class="container"></div>
   <div class="row col-12">
-    <div *ngFor="let item of blogs" class="card-deck col-12 col-md-4 mt-3 ml-2">
+    <div *ngFor="let item of blogs" class="card-deck col-12 col-md-4 mt-3 ml-2 ">
      <div class="card text-white bg-success">
         <img class="card-img-top img-responsive" [src]="item.photo!=null?item.photo:item.photo" alt="Blog image">
         <div class="card-body">
           <h5 class="card-title">{{item.title}}</h5>
-          <p class="card-text">{{item.body}}</p>
+          <p class="card-text" style="height:150px; overflow-y:auto;" >{{item.body}}</p>
           <pre class="card-text text-"><i>Posted At : {{item.createdAt}}</i></pre>
         </div>
         <div class="card-footer">
           <!-- <label class="ml-5">Like</label> -->
           <a class="btn mr-2 text-light"><i class="fa fa-heart fa-2x text-light mr-2"></i>Like</a>
          <!-- <label class="mr-2">Comment</label> -->
-          <a class="btn text-light ml-3" style="width:px;" routerLink="/addComment"><i class="fa fa-comment fa-2x text-light mr-2"></i>Comment</a>
+          <a class="btn text-light ml-3 " routerLink="/addComment"><i class="fa fa-comment fa-2x text-light mr-2"></i>Comment</a>
          </div>
     </div>
   </div>

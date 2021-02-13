@@ -52,7 +52,7 @@ export class MyProfileComponent implements OnInit {
 
     this.blogService.getBlog().subscribe(d=>{
       console.log(d);
-      this.blogs=d;
+      this.blogs=d.reverse();
 
     });
 

@@ -30,6 +30,7 @@ export class UserProfileComponent implements OnInit {
     }
 
   ngOnInit(): void {
+
     let item:string="";
     this.ar.params.subscribe(a=>{
       item=a["userName"];
@@ -37,12 +38,14 @@ export class UserProfileComponent implements OnInit {
     this.userService.getUserByUserName(item).subscribe(
       a=>{
       this.users=a;
+    console.log(a);
+    this.blogService.getBlogsByAuthor(this.users[0]._id).subscribe(d=>{
+      console.log(d);
+      this.blogs=d.reverse();
+  });
         }
     )
-    //   this.blogService.getBlogsByAuther(this.users[0]._id).subscribe(d=>{
-    //     console.log(d);
-    //     this.blogs=d;
-    // });
+
   }
 
 }
