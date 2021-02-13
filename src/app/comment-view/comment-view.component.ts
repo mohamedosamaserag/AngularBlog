@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+import { Blog } from '../_models/blog';
+import { BlogService } from '../_Services/blog.service';
 
 @Component({
   selector: 'app-comment-view',
@@ -7,9 +10,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CommentViewComponent implements OnInit {
 
-  constructor() { }
+  Eblog: Blog =new Blog;
+  constructor(public BlogService:BlogService, public ar: ActivatedRoute, public router: Router) { }
 
   ngOnInit(): void {
+    let id='';
+    this.ar.params.subscribe(
+      a=>{
+        console.log(a);
+       id = a['id'];
+        this.BlogService.getBlogById(id).subscribe(
+          d=>{
+            this.Eblog=d;
+          });
+      });
   }
 
 }

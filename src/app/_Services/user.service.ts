@@ -20,6 +20,14 @@ export class UserService {
   getUserByID(id:string){
     return this.http.get('https://myblogs-hanya.herokuapp.com/users/'+id);
   }
+
+  editUser(id:string,eUser:User){
+    return this.http.patch<User>('https://myblogs-hanya.herokuapp.com/users/edit/'+id,eUser);
+  }
+
+  deleteUser(id:string){
+    return this.http.delete('https://myblogs-hanya.herokuapp.com/users/delete/'+id);
+  }
   logedIn(){
     return !!localStorage.getItem('token');
   }

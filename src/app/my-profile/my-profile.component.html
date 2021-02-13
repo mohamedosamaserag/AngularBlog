@@ -8,8 +8,8 @@
     following:{{user.following}}<br>
     followers:{{user.followers}}<br>
 
-    <button class="btn btn-warning mt-2" routerLink="/editUser">Edit My Account</button><br>
-    <button class="btn btn-danger mt-2" routerLink="/deleteUser">Delete My Account</button>
+    <button class="btn btn-warning mt-2" [routerLink]="['/editUser', user._id]">Edit My Account</button><br>
+    <button class="btn btn-danger mt-2" [routerLink]="['/deleteUser', user._id]">Delete My Account</button>
 
   </div>
 
@@ -22,17 +22,29 @@
 <div class="row col-12">
   <div *ngFor="let item of blogs" class="card-deck col-12 col-md-4 mt-3 ml-2">
     <div class="card text-white bg-success">
+<<<<<<< HEAD
       <img class="card-img-top img-responsive" [src]="item.photo!=null?item.photo:item.photo"
       alt="Blog image">
+=======
+      <img class="card-img-top img-responsive" [src]="item.photo!=null?item.photo:item.photo" alt="Card image cap">
+>>>>>>> 95a53675df41f78f179c1a3d3b528849c7512d7a
       <div class="card-body">
         <h5 class="card-title">{{item.title}}</h5>
         <p class="card-text" style="height:150px; overflow-y:auto;">{{item.body}}</p>
         <pre class="card-text text-"><i>Posted At : {{item.createdAt}}</i></pre>
       </div>
       <div class="card-footer">
+<<<<<<< HEAD
         <a class="btn btn-dark mt-2 col-12" routerLink="/viewComment"><i class="fa fa-comment fa-2x text-light"></i>Comments</a>
         <a class="btn btn-primary mt-2 ml-3 mr-1 col-5" [routerLink]="['/editBlog', item._id]"><i class="fa fa-pen fa-2x text-light"></i>Edit</a>
         <a class="btn btn-danger mt-2 ml-3  col-5" [routerLink]="['/deleteBlog', item._id]"><i class="fa fa-trash fa-2x text-light"></i>Delete</a>
+=======
+        <button class="btn btn-warning" [routerLink]="['/viewComment',item._id]">View Comment</button>
+        <div>
+          <button class="btn btn-primary mt-2 mr-2" [routerLink]="['/editBlog', item._id]">Edit</button>
+          <button class="btn btn-danger mt-2" [routerLink]="['/deleteBlog', item._id]">Delete</button>
+        </div>
+>>>>>>> 95a53675df41f78f179c1a3d3b528849c7512d7a
       </div>
     </div>
   </div>

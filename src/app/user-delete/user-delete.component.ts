@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+import { User } from '../_models/user';
+import { UserService } from '../_Services/user.service';
 
 @Component({
   selector: 'app-user-delete',
@@ -7,9 +10,37 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UserDeleteComponent implements OnInit {
 
-  constructor() { }
+  user:User=new User;
+  constructor(public userService:UserService,public router:Router, public ar: ActivatedRoute) { }
+  deleteUser(){
+    console.log("serag");
+    let id:any=localStorage.getItem('userID');
+    // localStorage.removeItem('token');
+    // localStorage.removeItem('userID');
+    this.userService.deleteUser(id).subscribe(
+      d=>{
+        console.log(d);
+        this.router.navigateByUrl('/home');
 
-  ngOnInit(): void {
+      });
+
   }
+  cancel(){
+    this.router.navigateByUrl('/myProfile');
+  }
+  ngOnInit(): void {
+    let id='';
+    this.ar.params.subscribe(
+      a=>{
+        console.log(a);
+        id = a['id'];
+        this.userService.getUserByID(id).subscribe(
+          d=>{
+            console.log(d);
+            this.user=d;
+          });
+      });
+  }
+
 
 }

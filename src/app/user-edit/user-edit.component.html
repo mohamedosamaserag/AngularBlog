@@ -1,18 +1,47 @@
 <app-navbar></app-navbar>
-<div class="alert alert-primary container row col-9" style=" margin: 10px auto;">
+<div class="alert alert-primary container row " style=" margin: 10px auto;">
   <div class="col-8">
-    username: Gedo <br>
-    firstName: Mahmoud<br>
-    LastName: Khaled <br>
-    Email: gedo.mk@gmail.com <br>
-    password: 123<br>
-    following:<br>
-    followers:<br>
-    <button class="btn btn-success mt-2">Edit</button><br>
-    <button class="btn btn-danger mt-2">Cancel</button>
+    <div class="footer">
+      <div method="get" class="container was-validated" id="registerform">
+        <div class="input-group mb-3 row offset-3 col-6">
+          <span class="input-group-prepend "><i class="input-group-text fa fa-user fa-2x"></i></span>
+          <input id="firstName" type="text" class="form-control mr-2" [(ngModel)]="editUser.firstName"
+            placeholder="First Name" required />
+        </div>
+        <div class="input-group mb-3 row offset-3 col-6">
+          <span class="input-group-prepend "><i class="input-group-text fa fa-user fa-2x"></i></span>
+          <input id="lastName" type="text" class="form-control mr-2" [(ngModel)]="editUser.LastName"
+            placeholder="Last Name" required />
+        </div>
+        <div class="input-group mb-3 row offset-3 col-6">
+          <span class="input-group-prepend "><i class="input-group-text fa fa-user fa-2x"></i></span>
+          <input id="userName" type="text" class="form-control mr-2" [(ngModel)]="editUser.username"
+            placeholder="User Name" required />
+        </div>
+        <div class="input-group mb-3 row offset-3 col-6">
+          <span class="input-group-append"><i class=" input-group-text fa fa-envelope  fa-2x"></i></span>
+          <input id="Email" type="email" class="form-control mr-2" [(ngModel)]="editUser.Email" placeholder="Email"
+            required />
+        </div>
+        <!-- <div class="input-group mb-3 row offset-3 col-6">
+          <span class="input-group-append"><i class=" input-group-text fa fa-calendar  fa-2x"></i></span>
+          <input id="dateOfBirth" type="date" class="form-control mr-2" [(ngModel)]="editUser.dob" ngbDatepicker
+            placeholder="Date Of Birth" required />
+        </div>
+        <div class="input-group mb-3 row offset-3 col-6">
+          <span class="input-group-append"><i class=" input-group-text fa fa-lock fa-2x"></i></span>
+          <input id="password" type="password" class="form-control mr-2" [(ngModel)]="editUser.password"
+            placeholder="password" required />
+        </div> -->
+        <div>
+          <button class="btn btn-success mt-2" (click)="edit()">Edit</button><br>
+          <button class="btn btn-danger mt-2" (click)="cancel()">Cancel</button>
+        </div>
+      </div>
+    </div>
   </div>
-  <div class="col-1 mt-2">
+  <!-- <div class="col-1 mt-2">
     <i class="fa fa-user fa-8x text-success"></i>
     <label style="font-size:large; font-weight:600; margin-left:33px;">USER</label>
-  </div>
+  </div> -->
 </div>

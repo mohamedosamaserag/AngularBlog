@@ -1,9 +1,8 @@
 <app-navbar></app-navbar>
 <div class="row col-12">
-  <div  class="card-deck col-12 col-md-4 mt-3 ml-2">
+  <div class="card-deck col-12 col-md-4 mt-3 ml-2">
     <div class="card text-white bg-success">
-      <img class="card-img-top img-responsive" [src]="'https://myblogs-hanya.herokuapp.com/'+blog.photo"
-        alt="Card image cap">
+      <img class="card-img-top img-responsive" [src]="blog.photo!=null?blog.photo:blog.photo" alt="Card image cap">
       <div class="card-body">
         <h5 class="card-title">{{blog.title}}</h5>
         <p class="card-text">{{blog.body}}</p>
@@ -16,7 +15,3 @@
     </div>
   </div>
 </div>
-
-
-
-

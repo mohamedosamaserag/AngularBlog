@@ -31,10 +31,10 @@ const routes: Routes = [
   {path: 'editBlog/:id', component: BlogEditComponent},
 
   {path: 'deleteBlog/:id', component: BlogDeleteComponent},
-  {path: 'editUser', component: UserEditComponent},
-  {path: 'deleteUser', component: UserDeleteComponent},
-  {path: 'addComment', component: CommentAddComponent},
-  {path: 'viewComment', component: CommentViewComponent},
+  {path: 'editUser/:id', component: UserEditComponent},
+  {path: 'deleteUser/:id', component: UserDeleteComponent},
+  {path: 'addComment/:id', component: CommentAddComponent},
+  {path: 'viewComment/:id', component: CommentViewComponent},
 
 
   {path: '', redirectTo: '/register', pathMatch: 'full'},
