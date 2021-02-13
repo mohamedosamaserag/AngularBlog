@@ -1,18 +1,19 @@
 <app-navbar></app-navbar>
 <div class="alert alert-success container row col-6" style=" margin: 10px auto;">
-<div class="card-deck col-12">
-  <div class="card text-dark bg-light">
-    <img class="card-img-top img-responsive" src="assets/images/1.jpg" alt="Card image cap">
-    <div class="card-body">
-      <h5 class="card-title">Card title</h5>
-      <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-      <div class="col-12" >
-       <textarea class="col-12 mt-3" rows="7"placeholder="Add Comment" required="required"></textarea>
+  <div class="card-deck col-12">
+    <div class="card text-dark bg-light">
+      <img class="card-img-top img-responsive" [src]="Eblog.photo!=null?Eblog.photo:Eblog.photo" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">{{Eblog.title}}</h5>
+        <p class="card-text">{{Eblog.body}}</p>
+        <div class="col-12">
+          <textarea class="col-12 mt-3" rows="7" placeholder="Add Comment" [(ngModel)]="Eblog.comment"
+            required="required"></textarea>
+        </div>
+      </div>
+      <div class="card-footer">
+        <button class="btn btn-success mr-2" (click)="addComment()">Add</button>
+        <button class="btn btn-danger" (click)="cancel()">Cancel</button>
       </div>
     </div>
-    <div class="card-footer">
-      <button class="btn btn-success mr-2">Add</button>
-      <button class="btn btn-danger">Cancel</button>
-    </div>
   </div>
-</div>
