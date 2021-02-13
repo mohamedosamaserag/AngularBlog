@@ -19,7 +19,7 @@ editBlog(id: string, eblog: Blog){
 }
 
 deleteMyBlog(id: string){
-  return this.http.delete('https://myblogs-hanya.herokuapp.com/blogs/'+id);
+  return this.http.delete<Blog>('https://myblogs-hanya.herokuapp.com/blogs/'+id);
 }
 
 

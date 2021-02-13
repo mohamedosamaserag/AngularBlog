@@ -4,7 +4,10 @@
   padding-right: 1rem;
   padding-left: 1rem;
 }
-
+.card-footer
+{
+  background-color:skyblue;
+}
 /* Custom page header */
 .header {
   padding-bottom: 1rem;
@@ -15,13 +18,6 @@
   margin-top: 0;
   margin-bottom: 0;
   line-height: 3rem;
-}
-
-/* Custom page footer */
-.footer {
-  padding-top: 1.5rem;
-  color: #777;
-  border-top: .05rem solid #e5e5e5;
 }
 
 img
@@ -38,43 +34,12 @@ img
   margin: 2rem 0;
 }
 
-/* Main marketing message and sign up button */
-.jumbotron {
-  text-align: center;
-  border-bottom: .05rem solid #e5e5e5;
-  background-image: linear-gradient(rgba(12, 235, 149, 0.5), rgba(255, 255, 0, 0.5));
-
-}
-.jumbotron .btn {
-  padding: .75rem 1.5rem;
-  font-size: 1.5rem;
-}
-
-/* Supporting marketing content */
-.marketing {
-  margin: 3rem 0;
-}
-.marketing p + h4 {
-  margin-top: 1.5rem;
-}
-
-/* Responsive: Portrait tablets and up */
 @media screen and (min-width: 48em) {
-  /* Remove the padding we set earlier */
-  .header,
-  .marketing,
-  .footer {
+  .header{
     padding-right: 0;
     padding-left: 0;
   }
-
-  /* Space out the masthead */
   .header {
     margin-bottom: 2rem;
   }
-
-  .jumbotron {
-    border-bottom: 0;
-    background-image: linear-gradient(rgba(12, 235, 149, 0.5), rgba(255, 255, 0, 0.5));
-    }
 }

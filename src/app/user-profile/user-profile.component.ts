@@ -17,9 +17,6 @@ export class UserProfileComponent implements OnInit {
   blog!:Blog;
 
   constructor(public blogService:BlogService, public ar: ActivatedRoute, public userService:UserService, public router:Router)
-  // constructor()
-
-
   {
     let userName:any = localStorage.getItem('userName');
     console.log(userName);
@@ -27,7 +24,7 @@ export class UserProfileComponent implements OnInit {
       data=>{
         this.users=data;
       });
-    }
+  }
 
   ngOnInit(): void {
 

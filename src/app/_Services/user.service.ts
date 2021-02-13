@@ -18,7 +18,7 @@ export class UserService {
   }
 
   getUserByID(id:string){
-    return this.http.get('https://myblogs-hanya.herokuapp.com/users/'+id);
+    return this.http.get<User>('https://myblogs-hanya.herokuapp.com/users/'+id);
   }
 
   editUser(id:string,eUser:User){
