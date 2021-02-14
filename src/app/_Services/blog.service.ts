@@ -3,6 +3,8 @@ import { Injectable } from '@angular/core';
 import { from, Observable } from 'rxjs';
 import { Blog } from '../_models/blog';
 import { UserService } from './user.service';
+import { Comment } from '../_models/comment';
+
 
 @Injectable({
   providedIn: 'root'
@@ -47,7 +49,7 @@ deleteMyBlog(id: string){
         return this.http.get<Blog[]>('https://myblogs-hanya.herokuapp.com/blogs/blog/'+author);
   }
 
-  addComment(id:string,data:Blog){
+  addComment(id:string,data:Comment){
     return this.http.patch<Blog>('https://myblogs-hanya.herokuapp.com/blogs/comment/'+id,data);
   }
 }

@@ -11,6 +11,8 @@ import { BlogService } from '../_Services/blog.service';
 export class CommentViewComponent implements OnInit {
 
   Eblog: Blog =new Blog;
+
+
   constructor(public BlogService:BlogService, public ar: ActivatedRoute, public router: Router) { }
 
   ngOnInit(): void {
@@ -21,6 +23,7 @@ export class CommentViewComponent implements OnInit {
        id = a['id'];
         this.BlogService.getBlogById(id).subscribe(
           d=>{
+            console.log(d);
             this.Eblog=d;
           });
       });

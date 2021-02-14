@@ -1,9 +1,11 @@
+import { Comment } from './comment';
+
 export class Blog {
     _id!:string;
     title!:string;
     body!:string;
     tags!:string;
-    comment!:[string];
+    comment!:[Comment];
     photo!:string;
     likes!:number;
     createdAt!:Date;
