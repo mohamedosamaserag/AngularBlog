@@ -1,15 +1,14 @@
-<app-navbar></app-navbar>
-<div class="alert alert-primary container row col-12" style=" margin: 10px auto;">
-  <div class="col-8">
+<div class="alert container row col-12" style="margin-top: 70px;">
+  <div class="col-8" style="width: 100%;">
     username: {{user.username}} <br>
     firstName: {{user.firstName}}<br>
     LastName: {{user.LastName}} <br>
     Email: {{user.Email}} <br>
-    following:{{user.following}}<br>
-    followers:{{user.followers}}<br>
+    following:{{user.following.length}}<br>
+    followers:{{user.followers.length}}<br>
 
-    <button class="btn btn-warning mt-2" routerLink="/editUser">Edit My Account</button><br>
-    <button class="btn btn-danger mt-2" routerLink="/deleteUser">Delete My Account</button>
+    <button class="btn btn-primary mt-2" [routerLink]="['/editUser', user._id]">Edit My Account</button><br>
+    <button class="btn btn-danger mt-2" [routerLink]="['/deleteUser',user._id]">Delete My Account</button>
 
   </div>
 
@@ -26,15 +25,19 @@
       alt="Blog image">
       <div class="card-body">
         <h5 class="card-title">{{item.title}}</h5>
+        <h5 class="card-text text-warning"><i class="fa fa-tag  ml-3" aria-hidden="true"></i>{{item.tags}}</h5>
+
         <p class="card-text" style="height:150px; overflow-y:auto;">{{item.body}}</p>
-        <!-- <p class="card-text text-warning">By : {{item.author.username}}</p> -->
+        <p class="card-text text-warning">By : {{item.author.username}}</p>
         <pre class="card-text text-"><i>Posted At : {{item.createdAt}}</i></pre>
       </div>
       <div class="card-footer">
-        <a class="btn btn-success mt-2 col-12" routerLink="/viewComment"><i class="fa fa-comment fa-2x text-light"></i>Comments</a>
+        <a class="btn btn-success mt-2 col-12" [routerLink]="['/viewComment', item._id]"><i class="fa fa-comment fa-2x text-light"></i>Comments</a>
         <a class="btn btn-primary mt-2 ml-3 mr-1 col-5" [routerLink]="['/editBlog', item._id]"><i class="fa fa-pen fa-2x text-light"></i>Edit</a>
         <a class="btn btn-danger mt-2 ml-3  col-5" [routerLink]="['/deleteBlog', item._id]"><i class="fa fa-trash fa-2x text-light"></i>Delete</a>
       </div>
     </div>
   </div>
 </div>
+
+<app-navbar></app-navbar>

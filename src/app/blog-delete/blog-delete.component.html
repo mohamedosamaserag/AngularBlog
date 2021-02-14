@@ -1,12 +1,13 @@
-<app-navbar></app-navbar>
-<div class="row col-12">
+<div class="row col-12" style="margin-top:100px;">
   <div class="card-deck col-12 col-md-4 mt-3 ml-2">
-    <div class="card text-white bg-success">
+    <div class="card">
       <img class="card-img-top img-responsive" [src]="blog.photo!=null?blog.photo:blog.photo" alt="Card image cap">
       <div class="card-body">
         <h5 class="card-title">{{blog.title}}</h5>
+        <h5 class="card-text text-warning"><i class="fa fa-tag  ml-3" aria-hidden="true"></i>{{blog.tags}}</h5>
+
         <p class="card-text">{{blog.body}}</p>
-        <pre class="card-text text-"><i>Posted At : {{blog.createdAt}}</i></pre>
+        <pre class="card-text text-"><i>Posted At : {{blog.createdAt | date: 'MMMM dd YYYY'}}</i></pre>
       </div>
       <div class="card-footer">
         <button (click)="deleteMyBlog()" class="btn btn-danger mr-2">Delete</button>
@@ -15,3 +16,4 @@
     </div>
   </div>
 </div>
+<app-navbar></app-navbar>

@@ -1,36 +1,39 @@
-<app-navbar></app-navbar>
-<div *ngFor="let item of users" class="alert alert-info container row col-12" style=" margin: 10px auto;">
+<div *ngFor="let item of users" class="alert  container row col-12" style="margin-top: 70px;">
   <div class="col-8">
     username: {{item.username}} <br>
     firstName: {{item.firstName}}<br>
     LastName: {{item.LastName}} <br>
     Email: {{item.Email}} <br>
+    following:{{item.following.length}}<br>
+    followers:{{item.followers.length}}<br>
   </div>
   <div class="col-2">
     <!-- <label style="font-size:large; font-weight:600; margin:5p;">Follow</label> -->
-    <button class="btn btn-success"><i class="fa fa-user-plus fa-2x text-light"></i></button>
+    <button class="btn btn-success" (click)="follow()">{{following}}</button>
   </div>
-  <div class="col-2">
-    <!-- <label style="font-size:large; font-weight:600; margin:5px;">UnFollow</label> -->
+  <!-- <div class="col-2">
+    <label style="font-size:large; font-weight:600; margin:5px;">UnFollow</label>
     <button class="btn btn-success"><i class="fa fa-user-minus fa-2x text-light"></i></button>
-  </div>
+  </div> -->
 </div>
 <!-- <div class="container"></div> -->
   <div class="row col-12">
     <div *ngFor="let item2 of blogs" class="card-deck col-12 col-md-4 mt-3 ml-2">
-     <div class="card text-white bg-success">
+     <div class="card">
         <img class="card-img-top img-responsive"[src]="item2.photo!=null?item2.photo:item2.photo"
          alt="Blog image">
         <div class="card-body">
           <h5 class="card-title">{{item2.title}}</h5>
+          <h5 class="card-text text-warning"><i class="fa fa-tag  ml-3" aria-hidden="true"></i>{{item2.tags}}</h5>
+
           <p class="card-text"style="height:150px; overflow-y:auto;">{{item2.body}}</p>
           <pre class="card-text text-"><i>Posted At : {{item2.createdAt | date: 'MMMM dd YYYY'}}</i></pre>
         </div>
         <div class="card-footer">
-          <a class="btn mr-2 text-light"><i class="fa fa-heart fa-2x text-light mr-2"></i>Like</a>
-          <a class="btn text-light ml-3" style="width:px;" routerLink="/addComment"><i class="fa fa-comment fa-2x text-light mr-2"></i>Comment</a>
-          <i class="fa fa-tag btn ml-3 text-light" aria-hidden="true"></i>{{item2.tags}}
+          <a class="btn mr-2 text-dark"><i class="fa fa-heart fa-2x text-light mr-2"></i>Like</a>
+          <a class="btn text-dark ml-3 "  routerLink="/addComment"><i class="fa fa-comment fa-2x text-light mr-2"></i>Comment</a>
       </div>
     </div>
   </div>
-<!-- </div> -->
+</div>
+<app-navbar></app-navbar>

@@ -8,6 +8,7 @@ import { User } from '../_models/user';
 export class UserService {
 
   constructor(public http:HttpClient) { }
+  public token:any=localStorage.getItem('token');
 
   addUsr(user:User){
     return this.http.post('https://myblogs-hanya.herokuapp.com/users/add',user);
@@ -21,12 +22,12 @@ export class UserService {
     return this.http.get<User>('https://myblogs-hanya.herokuapp.com/users/'+id);
   }
 
-  editUser(id:string,eUser:User){
-    return this.http.patch<User>('https://myblogs-hanya.herokuapp.com/users/edit/'+id,eUser);
+  editUser(eUser:User){
+    return this.http.patch<User>('https://myblogs-hanya.herokuapp.com/users/edit',eUser,{headers:{authorization:this.token}});
   }
 
-  deleteUser(id:string){
-    return this.http.delete('https://myblogs-hanya.herokuapp.com/users/delete/'+id);
+  deleteUser(){
+    return this.http.delete('https://myblogs-hanya.herokuapp.com/users/delete/');
   }
   logedIn(){
     return !!localStorage.getItem('token');
@@ -40,11 +41,11 @@ export class UserService {
   }
 
   followUSer(id:string){
-    return this.http.post<User[]>('https://myblogs-hanya.herokuapp.com/users/follow/',id);
+    return this.http.post<User[]>('https://myblogs-hanya.herokuapp.com/users/follow/'+id,{});
   }
 
   unfollowUSer(id:string){
-    return this.http.post<User[]>('https://myblogs-hanya.herokuapp.com/users/unfollow/',id);
+    return this.http.post<User[]>('https://myblogs-hanya.herokuapp.com/users/unfollow/'+id,{});
   }
 
 

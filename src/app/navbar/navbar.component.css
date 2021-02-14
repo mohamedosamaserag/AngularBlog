@@ -3,8 +3,12 @@ a
   font-size: large;
   font-weight:600;
 }
-nav
-{
-
+.navbar {
+  overflow: hidden;
   background-color:skyblue;
+  position: fixed; /* Set the navbar to fixed position */
+  top: 0; /* Position the navbar at the top of the page */
+  width: 100%; /* Full width */
 }
+
+/* style="background-color: #e3f2fd;" */

@@ -1,12 +1,13 @@
-<app-navbar></app-navbar>
-<div class="alert alert-primary container row col-9" style=" margin: 10px auto;">
+
+<div class="alert alert-primary container row col-9" style=" margin-top: 100px;">
   <div class="col-8">
     username: {{user.username}} <br>
     firstName: {{user.firstName}}<br>
     LastName: {{user.LastName}} <br>
     Email: {{user.Email}} <br>
-    following:<br>
-    followers:<br>
+    following:{{user.following.length}}<br>
+    followers:{{user.followers.length}}<br>
+    
     <button (click)="deleteUser()" class="btn btn-success mt-2">Delete</button><br>
     <button (click)="cancel()" class="btn btn-danger mt-2">Cancel</button>
   </div>
@@ -15,3 +16,4 @@
     <label style="font-size:large; font-weight:600; margin-left:33px;">USER</label>
   </div>
 </div>
+<app-navbar></app-navbar>

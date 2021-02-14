@@ -2,7 +2,11 @@ img
 {
   height:300px;
 }
-.card-footer
+/* .card-footer
 {
   background-color:skyblue;
+} */
+
+.alert{
+  background-color: #eae3c8;
 }

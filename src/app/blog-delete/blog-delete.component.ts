@@ -13,13 +13,13 @@ import { UserService } from '../_Services/user.service';
 export class BlogDeleteComponent implements OnInit {
 
     user!:User;
-    blogs: Blog = new Blog;
-    blog!:Blog;
+    blog: Blog = new Blog;
+    //blog!:Blog;
 
   constructor(public blogService:BlogService, public router:Router, public ar: ActivatedRoute) { }
 
   deleteMyBlog(){
-    this.blogService.deleteMyBlog(this.blogs._id).subscribe(
+    this.blogService.deleteMyBlog(this.blog._id).subscribe(
       d=>{
         console.log(d);
         this.router.navigateByUrl('/myProfile');
@@ -27,16 +27,12 @@ export class BlogDeleteComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    let id ='';
-    this.ar.params.subscribe(
-      a=>{
-        id = a[ 'id' ];
+    let id = this.ar.snapshot.paramMap.get('id') ?? '';
         this.blogService.getBlogById(id).subscribe(
           d =>{
             console.log(d);
             this.blog = d;
           });
-      });
+      };
 
   }
-}

@@ -13,16 +13,13 @@ export class CommentAddComponent implements OnInit {
   constructor(public BlogService:BlogService, public ar: ActivatedRoute, public router: Router) { }
 
   ngOnInit(): void {
-    let id='';
-    this.ar.params.subscribe(
-      a=>{
-        console.log(a);
-       id = a['id'];
-        this.BlogService.getBlogById(id).subscribe(
-          d=>{
-            this.Eblog=d;
-          });
-      });
+    let id = this.ar.snapshot.paramMap.get('id') ?? '';
+ 
+     this.BlogService.getBlogById(id).subscribe(
+      d=>{
+      this.Eblog=d;
+    });
+     
   }
   
   addComment(){

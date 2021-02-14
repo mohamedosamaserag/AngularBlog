@@ -1,8 +1,7 @@
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
-<app-navbar></app-navbar>
 
 <div class="footer">
-  <form method="POST" class="container" style="margin-top:30px;" id="loginform">
+  <form method="POST" class="container" style="margin-top:100px;" id="loginform">
     <div class="input-group mb-3 row offset-3 col-6">
         <span class="input-group-prepend "><i class="input-group-text fa fa-bookmark fa-2x"></i></span>
         <input [(ngModel)]='Eblog.title' [ngModelOptions]="{standalone: true}" type="text" class="form-control" id="title" placeholder="title"  required="required" name="fieldName" ngDefaultControl/>
@@ -24,5 +23,6 @@
     </div>
   </form>
   </div>
+  <app-navbar></app-navbar>
 
 

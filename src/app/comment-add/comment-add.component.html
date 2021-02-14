@@ -1,8 +1,8 @@
-<app-navbar></app-navbar>
-<div class="alert alert-success container row col-6" style=" margin: 10px auto;">
+
+<div class="alert alert-success container row col-6" style=" margin-top: 100px;">
   <div class="card-deck col-12">
     <div class="card text-dark bg-light">
-      <img class="card-img-top img-responsive" [src]="Eblog.photo!=null?Eblog.photo:Eblog.photo" alt="Card image cap">
+      <img class="card-img-top img-responsive" [src]="Eblog.photo!=null?Eblog.photo:Eblog.photo" alt="Blog image">
       <div class="card-body">
         <h5 class="card-title">{{Eblog.title}}</h5>
         <p class="card-text">{{Eblog.body}}</p>
@@ -17,3 +17,5 @@
       </div>
     </div>
   </div>
+  </div>
+  <app-navbar></app-navbar>

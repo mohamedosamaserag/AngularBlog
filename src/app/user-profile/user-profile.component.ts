@@ -15,6 +15,9 @@ export class UserProfileComponent implements OnInit {
   blogs: Blog[]=[];
   users: User[]=[];
   blog!:Blog;
+  following = "follow";
+
+  // user: User= new User;
 
   constructor(public blogService:BlogService, public ar: ActivatedRoute, public userService:UserService, public router:Router)
   {
@@ -24,6 +27,22 @@ export class UserProfileComponent implements OnInit {
       data=>{
         this.users=data;
       });
+  }
+  follow(){
+    if(this.following == "follow"){
+      this.userService.followUSer(this.users[0].username).subscribe(
+        a =>{
+          location.reload();
+        }
+      );
+    }
+    else{
+      this.userService.unfollowUSer(this.users[0].username).subscribe(
+        a =>{
+          location.reload();
+        }
+      );
+    }
   }
 
   ngOnInit(): void {
@@ -42,8 +61,21 @@ export class UserProfileComponent implements OnInit {
       });
       });
 
-
-
+      ///////////////////////////////////
+      let id:any = localStorage.getItem('userID');//this.blogs.author;
+      console.log(id);
+      this.userService.getUserByID(id).subscribe(
+        data=>{
+          data.following.findIndex(value =>{
+            console.log(this.users[0].username);
+            if(value == this.users[0].username){              
+              console.log("hii");
+              this.following= "unfollow";
+            }
+          })
+        }
+      )
   }
 
 }
+

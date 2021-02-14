@@ -13,6 +13,8 @@ export class BlogEditComponent implements OnInit {
   myDate = new Date();
  // Eblog: Blog =new Blog( '', '', '', [''], '', 0, this.myDate, this.myDate);
   Eblog: Blog =new Blog;
+  photo!: File;
+
   constructor(public BlogService: BlogService, public ar: ActivatedRoute, public router: Router) { }
 
   edit(){
@@ -22,6 +24,10 @@ export class BlogEditComponent implements OnInit {
         this.router.navigateByUrl('/myProfile');
       });
   }
+  // handleFileInput(event: any){
+  //   const fileList: FileList = event.target.files;
+  //   this.photo=fileList[0];
+  // }
 
 
   ngOnInit(): void {

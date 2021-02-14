@@ -13,9 +13,8 @@ export class UserEditComponent implements OnInit {
   constructor(public userService:UserService, public ar: ActivatedRoute, public router: Router) { }
 
   edit(){
-    let id:any=localStorage.getItem('userID');
-
-    return this.userService.editUser(id, this.editUser).subscribe(
+    // let id:any=localStorage.getItem('userID');
+    return this.userService.editUser( this.editUser).subscribe(
       a =>{
         console.log(a);
         this.router.navigateByUrl('/myProfile');
@@ -26,17 +25,12 @@ export class UserEditComponent implements OnInit {
     this.router.navigateByUrl('/myProfile');
   }
   ngOnInit(): void {
-    let id='';
-    this.ar.params.subscribe(
-      a=>{
-        console.log(a);
-        id = a['id'];
+    let id = this.ar.snapshot.paramMap.get('id') ?? '';
         this.userService.getUserByID(id).subscribe(
-          d=>{
+          d =>{
             console.log(d);
-            this.editUser=d;
+            this.editUser = d;
           });
-      });
   }
 
 }

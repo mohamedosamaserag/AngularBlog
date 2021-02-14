@@ -1,5 +1,4 @@
-<app-navbar></app-navbar>
-<div class="alert alert-primary container row " style=" margin: 10px auto;">
+<div class="alert alert-primary container row " style=" margin-top: 100px;">
   <div class="col-8">
     <div class="footer">
       <div method="get" class="container was-validated" id="registerform">
@@ -23,6 +22,11 @@
           <input id="Email" type="email" class="form-control mr-2" [(ngModel)]="editUser.Email" placeholder="Email"
             required />
         </div>
+        <div class="input-group mb-3 row offset-3 col-6">
+          <span class="input-group-append"><i class=" input-group-text fa fa-lock  fa-2x"></i></span>
+          <input id="password" type="password" class="form-control mr-2" [(ngModel)]="editUser.password" placeholder="password"
+          required />
+        </div>
         <!-- <div class="input-group mb-3 row offset-3 col-6">
           <span class="input-group-append"><i class=" input-group-text fa fa-calendar  fa-2x"></i></span>
           <input id="dateOfBirth" type="date" class="form-control mr-2" [(ngModel)]="editUser.dob" ngbDatepicker
@@ -45,3 +49,4 @@
     <label style="font-size:large; font-weight:600; margin-left:33px;">USER</label>
   </div> -->
 </div>
+<app-navbar></app-navbar>

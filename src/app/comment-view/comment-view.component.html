@@ -1,5 +1,5 @@
-<app-navbar></app-navbar>
-<div class="alert alert-success container row col-6" style=" margin: 10px auto;">
+
+<div class="alert alert-success container row col-6" style="margin-top: 100px;">
   <div class="card-deck col-12">
     <div class="card text-dark bg-light">
       <img class="card-img-top img-responsive" [src]="Eblog.photo!=null?Eblog.photo:Eblog.photo" alt="Card image cap">
@@ -12,7 +12,6 @@
         <div *ngFor="let item of Eblog.comment">
           <p>
             {{item}}
-
           </p>
           <hr>
         </div>
@@ -22,3 +21,5 @@
       </div>
     </div>
   </div>
+  </div>
+  <app-navbar></app-navbar>
